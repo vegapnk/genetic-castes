@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
 
     /// <summary>
@@ -19,13 +19,13 @@ namespace RJW_Genes
 
         public override bool Applies(StatRequest req)
         {
-            if (req.Pawn == null || !req.Pawn.Spawned)
+            if (req.Pawn == null || !req.Pawn.Spawned || req.Pawn.genes == null)
                 return false;
             // If the pawn is not on Map (e.g. caravan), no mali 
             if (!HiveUtility.PawnIsOnHomeMap(req.Pawn))
                 return false;
 
-            if (GeneUtility.HasGeneNullCheck(req.Pawn, GeneDefOf.rjw_genes_zealous_loyalty))
+            if (req.Pawn.genes.HasActiveGene(GeneDefOf.genetic_castes_zealous_loyalty))
             {
                 return HiveUtility.QueensOnMap() == 0;
             }

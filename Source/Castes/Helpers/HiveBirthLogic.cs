@@ -9,10 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     /// <summary>
-    /// DevNote: Issue #37 came along because I checked for getMother() and getFather(), but it can happen that a pawn has two mothers. 
+    /// DevNote: RJW-Genes Issue #37 came along because I checked for getMother() and getFather(), but it can happen that a pawn has two mothers. 
     /// They are called Mother if they have a ParentRelation and are female.
     /// New behaviour iterates over all parents and returns the first queen/drone or null.
     /// </summary>
@@ -40,7 +40,7 @@ namespace RJW_Genes
             // Case 1: Mother is Queen, Father is something else. Produce Worker.
             if (!hasDroneParent)
             {
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"{pawn} was born as a worker, as it did not have Drone Father ({100}% chance)");
+                // ModLog.Message($"{pawn} was born as a worker, as it did not have Drone Father ({100}% chance)");
                 MakeWorker(pawn, queenDef);
             }
             // Case 2: Mother is Queen, Father is drone. Apply xenotype as per chance.
@@ -51,19 +51,19 @@ namespace RJW_Genes
                 if (roll < hiveOffspringChanceDef.queenChance)
                 {
                     MakeQueen(pawn, queenDef);
-                    if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"Queen Chance: {hiveOffspringChanceDef.queenChance * 100}% chance,rolled { roll}");
+                    // ModLog.Message($"Queen Chance: {hiveOffspringChanceDef.queenChance * 100}% chance,rolled { roll}");
                 }
                 // Case 2.b: New Drone born
                 else if (roll < hiveOffspringChanceDef.droneChance + hiveOffspringChanceDef.queenChance)
                 {
                     var droneDef = TryFindParentDroneXenotype(pawn); 
                     MakeDrone(pawn,droneDef);
-                    if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"Drone Chance ({(hiveOffspringChanceDef.droneChance + hiveOffspringChanceDef.queenChance) * 100}% chance,rolled {roll}))");
+                    //if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"Drone Chance ({(hiveOffspringChanceDef.droneChance + hiveOffspringChanceDef.queenChance) * 100}% chance,rolled {roll}))");
                 }
                 // Case 2.c: Worker
                 else
                 {
-                    if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"{pawn} born as a worker ({(hiveOffspringChanceDef.workerChance) * 100}% chance,rolled {roll}))");
+                    //if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"{pawn} born as a worker ({(hiveOffspringChanceDef.workerChance) * 100}% chance,rolled {roll}))");
                     MakeWorker(pawn, queenDef);
                 }
             }
@@ -75,7 +75,7 @@ namespace RJW_Genes
             if (queenDef.isLeft) {
                 var xenotype = queenDef.left;
                 pawnToBeQueen.genes.SetXenotype(xenotype);
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"{pawnToBeQueen} born as a new queen with Xenotype {xenotype.defName}");
+                 // ModLog.Message($"{pawnToBeQueen} born as a new queen with Xenotype {xenotype.defName}");
             } else {
                 var customXenotype = queenDef.right;
 
@@ -85,7 +85,7 @@ namespace RJW_Genes
                 pawnToBeQueen.genes.xenotypeName = customXenotype.name;
                 pawnToBeQueen.genes.iconDef = customXenotype.iconDef;
 
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"{pawnToBeQueen} born as a new queen with custom Xenotype {customXenotype.name}");
+                // ModLog.Message($"{pawnToBeQueen} born as a new queen with custom Xenotype {customXenotype.name}");
             }
 
             MakeQueenBornLetter(pawnToBeQueen);
@@ -100,7 +100,7 @@ namespace RJW_Genes
             {
                 var xenotype = droneDef.left;
                 pawnToBeDrone.genes.SetXenotype(xenotype);
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"{pawnToBeDrone} born as a new drone with Xenotype {xenotype.defName}");
+                // ModLog.Message($"{pawnToBeDrone} born as a new drone with Xenotype {xenotype.defName}");
             }
             else
             {
@@ -112,7 +112,7 @@ namespace RJW_Genes
                 pawnToBeDrone.genes.xenotypeName = customXenotype.name;
                 pawnToBeDrone.genes.iconDef = customXenotype.iconDef;
 
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"{pawnToBeDrone} born as a new drone with custom Xenotype {customXenotype.name}");
+                // ModLog.Message($"{pawnToBeDrone} born as a new drone with custom Xenotype {customXenotype.name}");
             }
         }
 
@@ -171,8 +171,8 @@ namespace RJW_Genes
             if (bornQueen == null) return;
 
             var letter = LetterMaker.MakeLetter(
-                "rjw_genes_queenbirth_letter_label".Translate(),
-                string.Format("rjw_genes_queenbirth_letter_description".Translate(), xxx.get_pawnname(bornQueen)),
+                "genetic_castes_queenbirth_letter_label".Translate(),
+                string.Format("genetic_castes_queenbirth_letter_description".Translate(), xxx.get_pawnname(bornQueen)),
                 LetterDefOf.NeutralEvent, bornQueen);
             Find.LetterStack.ReceiveLetter(letter); 
         }

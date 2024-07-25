@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     /// <summary>
     /// Patches the method `ProcessHumanLikeInsectEgg` from `Hediff_InsectEgg`. 
@@ -28,7 +28,7 @@ namespace RJW_Genes
             // Check: Was the born thing a pawn? 
             if (__result == null || !(__result is Pawn))
             {
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message("There was a birth of something non-human - not entering logic for queen-drone-xenotype inheritance.");
+                // ModLog.Message("There was a birth of something non-human - not entering logic for queen-drone-xenotype inheritance.");
                 return;
             }
 
@@ -42,20 +42,20 @@ namespace RJW_Genes
 
             if (hasQueenParent)
             {
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"PostFix Hediff_InsectEgg::ProcessHumanLikeInsectEgg - Checking Hive Inheritance because {pawn} has a queen parent.");
+                // ModLog.Message($"PostFix Hediff_InsectEgg::ProcessHumanLikeInsectEgg - Checking Hive Inheritance because {pawn} has a queen parent.");
                 HiveBirthLogic.ManageHiveBirth(pawn, hasDroneParent, fallbackQueenDef: queenDef, fallbackDroneDef: droneDef);
             } else
             {
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"Ignoring Postfix Hediff_InsectEgg::ProcessHumanLikeInsectEgg - No Queen Parent - No Action.");
+                //ModLog.Message($"Ignoring Postfix Hediff_InsectEgg::ProcessHumanLikeInsectEgg - No Queen Parent - No Action.");
 
-                // Extra Debug for #56
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug)
-                {
+                /// Extra Debug for RJW-Genes #56
+                /*if (RJW_Genes_Settings.rjw_genes_detailed_debug)
+                //{
                     ModLog.Message($"Implanter was: ({__instance.implanter.genes.xenotypeName}|{__instance.implanter.genes.Xenotype}), Fertilizer was: ({__instance.father.genes.xenotypeName}|{__instance.father.genes.Xenotype})");
                     ModLog.Message($"Implanter Xenotype From helper: {HiveUtility.TryGetQueenXenotype(__instance.implanter)} and has Queen {__instance.implanter.genes.HasGene(GeneDefOf.rjw_genes_queen)}");
                     ModLog.Message($"Father Xenotype From helper: {HiveUtility.TryGetDroneXenotype(__instance.implanter)} and has Drone {__instance.father.genes.HasGene(GeneDefOf.rjw_genes_drone)}");
                     CustomXenotype custom = __instance.implanter.genes.CustomXenotype;
-                }
+                } */
             }
         }
 

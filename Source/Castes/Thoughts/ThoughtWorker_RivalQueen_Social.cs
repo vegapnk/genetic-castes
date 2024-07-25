@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     public class ThoughtWorker_RivalQueen_Social : ThoughtWorker
     {
@@ -24,7 +24,7 @@ namespace RJW_Genes
                 return (ThoughtState)false;
 
             // Only check if they are spawned 
-            if (!p.Spawned || !other.Spawned)
+            if (!p.Spawned || !other.Spawned || p.genes == null || other.genes == null)
             {
                 return (ThoughtState)false;
             }

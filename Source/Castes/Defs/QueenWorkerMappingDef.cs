@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     /// <summary>
     /// This def covers the birth of workers for each queen-xenotype. 

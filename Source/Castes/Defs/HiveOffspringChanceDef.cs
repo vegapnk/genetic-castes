@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     public class HiveOffspringChanceDef : Def 
     {
@@ -13,11 +13,9 @@ namespace RJW_Genes
         public string queenXenotype;
 
         // Chance of the below should be 1 when summed up! 
-        // Otherwise the roll-logic fails.
-
+        // Otherwise the roll-logic fails / missbehaves.
         public double queenChance;
         public double droneChance;
         public double workerChance;
-
     }
 }

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
 
 	<ThoughtDef>
 		<!-- For Challenged Queens -->
-		<defName>rjw_genes_rival_queen_mood</defName>
-		<workerClass>RJW_Genes.Thoughtworker_RivalQueen_Mood</workerClass>
+		<defName>genetic_castes_rival_queen_mood</defName>
+		<workerClass>GeneticCastes.Thoughtworker_RivalQueen_Mood</workerClass>
 		<validWhileDespawned>false</validWhileDespawned>
 		<stages>
 			<li>
@@ -18,9 +18,9 @@
 
 	<ThoughtDef>
 		<!-- For Challenged Queens -->
-		<defName>rjw_genes_rival_queen_social</defName>
+		<defName>genetic_castes_rival_queen_social</defName>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
-		<workerClass>RJW_Genes.Thoughtworker_RivalQueen_Social</workerClass>
+		<workerClass>GeneticCastes.Thoughtworker_RivalQueen_Social</workerClass>
 		<stages>
 			<li>
 				<label>rivals me</label>
@@ -31,9 +31,9 @@
 	</ThoughtDef>
 
 	<ThoughtDef>
-		<defName>rjw_genes_queen_despises_workers_social</defName>
+		<defName>genetic_castes_queen_despises_workers_social</defName>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
-		<workerClass>RJW_Genes.ThoughtWorker_WorkerDespised_Social</workerClass>
+		<workerClass>GeneticCastes.ThoughtWorker_WorkerDespised_Social</workerClass>
 		<stages>
 			<li>
 				<label>underling</label>
@@ -45,8 +45,8 @@
 
 	<ThoughtDef>
 		<!-- For Loyal Pawns -->
-		<defName>rjw_genes_multiple_queens_mood</defName>
-		<workerClass>RJW_Genes.Thoughtworker_MultipleQueens_Mood</workerClass>
+		<defName>genetic_castes_multiple_queens_mood</defName>
+		<workerClass>GeneticCastes.Thoughtworker_MultipleQueens_Mood</workerClass>
 		<validWhileDespawned>false</validWhileDespawned>
 		<stages>
 			<li>
@@ -59,9 +59,9 @@
 
 	<ThoughtDef>
 		<!-- For Loyal Pawns -->
-		<defName>rjw_genes_queen_loyalty_social</defName>
+		<defName>genetic_castes_queen_loyalty_social</defName>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
-		<workerClass>RJW_Genes.Thoughtworker_QueenPresent_Social</workerClass>
+		<workerClass>GeneticCastes.Thoughtworker_QueenPresent_Social</workerClass>
 		<stages>
 			<li>
 				<label>Worship</label>
@@ -73,13 +73,14 @@
 
 	<ThoughtDef>
 		<!-- For Loyal Pawns -->
-		<defName>rjw_genes_no_queen_mood</defName>
-		<workerClass>RJW_Genes.Thoughtworker_QueenAbsent_Mood</workerClass>
+		<defName>genetic_castes_no_queen_mood</defName>
+		<workerClass>GeneticCastes.Thoughtworker_QueenAbsent_Mood</workerClass>
 		<validWhileDespawned>false</validWhileDespawned>
 		<stages>
 			<li>
 				<label>Missing Queen</label>
-				<description>We do not have a queen! How are we suppossed to face the cruelties of the world without a shepherd?</description>
+				<description>We do not have a queen! How are we suppossed to face the cruelties of
+					the world without a shepherd?</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 		</stages>
@@ -87,8 +88,8 @@
 
 	<ThoughtDef>
 		<!-- For Loyal Pawns -->
-		<defName>rjw_genes_queen_present_mood</defName>
-		<workerClass>RJW_Genes.Thoughtworker_QueenPresent_Mood</workerClass>
+		<defName>genetic_castes_queen_present_mood</defName>
+		<workerClass>GeneticCastes.Thoughtworker_QueenPresent_Mood</workerClass>
 		<validWhileDespawned>false</validWhileDespawned>
 		<stages>
 			<li>

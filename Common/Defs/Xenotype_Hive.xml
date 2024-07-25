@@ -4,7 +4,7 @@
   <!-- Alpha Genes ID: sarg.alphagenes -->
 
   <XenotypeDef>
-    <defName>rjw_genes_halamyr_queen_xenotype</defName>
+    <defName>genetic_castes_halamyr_queen_xenotype</defName>
     <label>Halamyr Queen</label>
     <iconPath>Genes/Icons/Xenotypes/Xenotype-Queen</iconPath>
     <inheritable>false</inheritable>
@@ -25,29 +25,29 @@
         <li>MeleeDamage_Weak</li>
         <li>Sleepy</li>
         <li>Delicate</li>
-        <li>rjw_genes_hypersexual</li>
-        <li>rjw_genes_bisexual</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_hypersexual</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_bisexual</li>
         <li>Libido_High</li>
         <li>Beauty_Beautiful</li>
         <li MayRequire="sarg.alphagenes" >AG_OutwardsAntennas</li>
         <li>Skin_DeepRed</li>
         <li>Learning_Fast</li>
-        <li>rjw_genes_fervent_ovipositor</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_fervent_ovipositor</li>
         <li>AptitudeTerrible_Shooting</li>
         <li>AptitudeTerrible_Melee</li>
         <li>AptitudeRemarkable_Social</li>
         <li MayRequire="rjw.sexperience">AptitudeRemarkable_Sex</li>
-        <li>rjw_genes_female_only</li>
-        <li>rjw_genes_ovipositor_genitalia</li>
-        <li>rjw_genes_aphrodisiac_pheromones</li>
-        <li>rjw_genes_queen</li>
-        <li>rjw_genes_cocoonweaver</li>
-        <li>rjw_genes_spawn_spelopede</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_female_only</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_ovipositor_genitalia</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_aphrodisiac_pheromones</li>
+        <li>genetic_castes_queen</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_cocoonweaver</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_spawn_spelopede</li>
     </genes>
   </XenotypeDef>
   
   <XenotypeDef>
-    <defName>rjw_genes_halamyr_hiveguard_xenotype</defName>
+    <defName>genetic_castes_halamyr_hiveguard_xenotype</defName>
     <label>Halamyr Hiveguard</label>
     <iconPath>Genes/Icons/Xenotypes/Xenotype-Guard</iconPath>
 
@@ -82,15 +82,15 @@
         <li>AptitudeTerrible_Artistic</li>
         <li>AptitudeTerrible_Medicine</li>
         <li>AptitudePoor_Social</li>
-        <li>rjw_genes_male_only</li>
-        <li>rjw_genes_ovipositor_genitalia</li>
-        <li>rjw_genes_drone</li>
-        <li>rjw_genes_zealous_loyalty</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_male_only</li>
+        <li MayRequire="vegapnk.rjw.genes">rjw_genes_ovipositor_genitalia</li>
+        <li>genetic_castes_drone</li>
+        <li>genetic_castes_zealous_loyalty</li>
     </genes>
   </XenotypeDef>
   
   <XenotypeDef>
-    <defName>rjw_genes_halamyr_breeder_xenotype</defName>
+    <defName>genetic_castes_halamyr_breeder_xenotype</defName>
     <label>Halamyr Breeder</label>
     <iconPath>Genes/Icons/Xenotypes/Xenotype-Breeder</iconPath>
     <inheritable>false</inheritable>
@@ -109,15 +109,15 @@
 			<li MayRequire="sarg.alphagenes" >AG_FastGestation</li>
 			<li>FireTerror</li>
 			<li>VerySleepy</li>
-			<li>rjw_genes_bisexual</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_bisexual</li>
 			<li>Skin_DeepRed</li>
 			<li>AptitudeStrong_Social</li>
-			<li>rjw_genes_drone</li>
-      <li>rjw_genes_female_only</li>
-			<li>rjw_genes_zealous_loyalty</li>
-			<li>rjw_genes_insectincubator</li>	
-			<li>rjw_genes_zoophile</li>	
-      <li>rjw_genes_no_vagina</li>
+			<li>genetic_castes_drone</li>
+      <li MayRequire="vegapnk.rjw.genes">rjw_genes_female_only</li>
+			<li>genetic_castes_zealous_loyalty</li>
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_insectincubator</li>	
+			<li MayRequire="vegapnk.rjw.genes">rjw_genes_zoophile</li>	
+      <li MayRequire="vegapnk.rjw.genes">rjw_genes_no_vagina</li>
     </genes>
   </XenotypeDef>
   

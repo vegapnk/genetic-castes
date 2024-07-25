@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
 
     /// <summary>
@@ -24,22 +24,22 @@ namespace RJW_Genes
 
         public override bool Applies(StatRequest req)
         {
-            if (req.Pawn == null || !req.Pawn.Spawned)
+            if (req.Pawn == null || !req.Pawn.Spawned || req.Pawn.genes == null)
                 return false;
             // If the pawn is not on Map (e.g. caravan), no mali 
             if (!HiveUtility.PawnIsOnHomeMap(req.Pawn))
                 return false;
 
             // Case A: Check for Loyal Pawns if their One Queen is nearby
-            if (GeneUtility.HasGeneNullCheck(req.Pawn, GeneDefOf.rjw_genes_zealous_loyalty) && HiveUtility.QueensOnMap() == 1)
+            if (req.Pawn.genes.HasActiveGene(GeneDefOf.genetic_castes_zealous_loyalty) && HiveUtility.QueensOnMap() == 1)
             {
                 Pawn queen = HiveUtility.GetQueensOnMap()[0];
 
                 return req.Pawn.Position.DistanceTo(queen.Position) <= EFFECT_DISTANCE;
             }
 
-            // Case A: Check for Queen if another Queen is nearby
-            if (GeneUtility.HasGeneNullCheck(req.Pawn, GeneDefOf.rjw_genes_zealous_loyalty) && HiveUtility.QueensOnMap() >= 2)
+            // Case B: Check for Queen if another Queen is nearby
+            if (req.Pawn.genes.HasActiveGene(GeneDefOf.genetic_castes_zealous_loyalty) && HiveUtility.QueensOnMap() >= 2)
             {
                 foreach (Pawn queen in HiveUtility.GetQueensOnMap())
                 {
@@ -47,7 +47,6 @@ namespace RJW_Genes
                         return true;
                 }
             }
-
 
             return false;
         }

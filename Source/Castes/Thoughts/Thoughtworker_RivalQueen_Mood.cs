@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     public class Thoughtworker_RivalQueen_Mood : ThoughtWorker
     {
 
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p == null || !p.Spawned)
+            if (p == null || !p.Spawned || p.genes == null)
                 return (ThoughtState) false;
             // If the pawn is not on Map (e.g. caravan), no mali 
             if (!HiveUtility.PawnIsOnHomeMap(p))

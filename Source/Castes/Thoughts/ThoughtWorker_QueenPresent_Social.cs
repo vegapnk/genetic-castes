@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     public class ThoughtWorker_QueenPresent_Social : ThoughtWorker
     {
@@ -25,14 +25,14 @@ namespace RJW_Genes
                 return (ThoughtState) false;
 
             // Only check if they are spawned 
-            if (!p.Spawned || !other.Spawned)
+            if (!p.Spawned || !other.Spawned || p.genes == null)
                 return (ThoughtState)false;
 
             // If the pawn is not on Map (e.g. caravan), no mali 
             if (!HiveUtility.PawnIsOnHomeMap(p))
                 return (ThoughtState)false;
 
-            if (GeneUtility.HasGeneNullCheck(p, GeneDefOf.rjw_genes_zealous_loyalty) && HiveUtility.QueensOnMap() == 1)
+            if (p.genes.HasActiveGene(GeneDefOf.genetic_castes_zealous_loyalty) && HiveUtility.QueensOnMap() == 1)
             {
                 return (ThoughtState) HiveUtility.IsAdultQueen(other);
             }

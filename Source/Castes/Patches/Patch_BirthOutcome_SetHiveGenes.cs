@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace RJW_Genes
+namespace GeneticCastes
 {
     /// <summary>
     /// Patches the method `ApplyBirthOutcome` from `PregnancyUtility`. 
@@ -27,7 +27,7 @@ namespace RJW_Genes
             // Check: Was the born thing a pawn? 
             if (__result == null || !(__result is Pawn))
             {
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug)  ModLog.Message("There was a birth of something non-human - not entering logic for queen-drone-xenotype inheritance.");
+                // ModLog.Message("There was a birth of something non-human - not entering logic for queen-drone-xenotype inheritance.");
                 return;
             }
 
@@ -39,13 +39,13 @@ namespace RJW_Genes
 
             if (hasQueenParent)
             {
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"PostFix PregnancyUtility::ApplyBirthOutcome - Checking Hive Inheritance because {pawn} has a queen parent.");
+                // ModLog.Message($"PostFix PregnancyUtility::ApplyBirthOutcome - Checking Hive Inheritance because {pawn} has a queen parent.");
 
                 HiveBirthLogic.ManageHiveBirth(pawn, hasDroneParent);
             }
             else
             {
-                if (RJW_Genes_Settings.rjw_genes_detailed_debug) ModLog.Message($"Ignoring Postfix PregnancyUtility::ApplyBirthOutcome - No Quene Parent - Doing Nothing");
+                // ModLog.Message($"Ignoring Postfix PregnancyUtility::ApplyBirthOutcome - No Quene Parent - Doing Nothing");
             }
         }
 
