@@ -42,7 +42,7 @@
         <li MayRequire="vegapnk.rjw.genes">rjw_genes_aphrodisiac_pheromones</li>
         <li>genetic_castes_queen</li>
         <li MayRequire="vegapnk.rjw.genes">rjw_genes_cocoonweaver</li>
-        <li MayRequire="vegapnk.rjw.genes">rjw_genes_spawn_spelopede</li>
+        <!-- <li MayRequire="vegapnk.rjw.genes">rjw_genes_spawn_spelopede</li>--> <!-- DevNote: Maybe I should bring this back ... --> 
     </genes>
   </XenotypeDef>
   

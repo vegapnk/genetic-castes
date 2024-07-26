@@ -22,7 +22,7 @@
 
           <xenotypeCounts>
             <li>
-              <xenotype>rjw_genes_halamyr_queen_xenotype</xenotype>
+              <xenotype>genetic_castes_halamyr_queen_xenotype</xenotype>
               <count>1</count>
               <description>non-baby halamyr queen</description>
               <requiredAtStart>true</requiredAtStart>
@@ -30,7 +30,7 @@
             </li>
 
             <li>
-              <xenotype>rjw_genes_halamyr_hiveguard_xenotype</xenotype>
+              <xenotype>genetic_castes_halamyr_hiveguard_xenotype</xenotype>
               <count>1</count>
               <description>non-baby halamyr hiveguard</description>
               <requiredAtStart>true</requiredAtStart>
@@ -38,7 +38,7 @@
             </li>
 
             <li>
-              <xenotype>rjw_genes_halamyr_breeder_xenotype</xenotype>
+              <xenotype>genetic_castes_halamyr_breeder_xenotype</xenotype>
               <count>1</count>
               <description>adulthalamyr breeder</description>
               <requiredAtStart>true</requiredAtStart>

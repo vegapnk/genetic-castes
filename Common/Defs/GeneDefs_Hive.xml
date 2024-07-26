@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<GeneCategoryDef>
+		<defName>genetic_castes_hive</defName>
+		<label>caste</label>
+		<displayPriorityInXenotype>40</displayPriorityInXenotype>
+	  </GeneCategoryDef>
+
 	<GeneDef Name="HiveBase" Abstract="True">
 		<displayCategory>genetic_castes_hive</displayCategory>
 	</GeneDef>
